@@ -1,0 +1,8 @@
+{% extends "templates/partials/base.html" %}
+
+{% block content %}
+<h1  class="homepage-descript">Land and Country Homes</h1>
+  {% set parameters = {property_type: "Land and Country"} %}
+  {%include 'templates/partials/list-property.html' with parameters %}
+
+{% endblock %}

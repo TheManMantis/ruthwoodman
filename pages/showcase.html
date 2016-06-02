@@ -1,0 +1,8 @@
+{% extends "templates/partials/base.html" %}
+
+{% block content %}
+<h1 class="homepage-descript">Showcase Listings</h1>
+  {% set parameters = {property_type: "Showcase"} %}
+  {%include 'templates/partials/list-showcase.html' with parameters %}
+
+{% endblock %}

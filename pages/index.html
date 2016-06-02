@@ -1,0 +1,65 @@
+
+{% extends "templates/partials/base.html" %}
+
+{% block title %}{% parent %} - Homepage{% endblock %}
+
+{% block content %}
+
+
+  {% if cms_types|size !== 0 %}
+  {% set residential_rentalproperties = cms.properties|where('multiple_choice','Residential') %}
+  {% set residential_rentalproperties = paginate(residential_rentalproperties, 5) %}
+    <div class="homepage-content">
+        <p class="homepage-descript">Click on the door to search Northwest Louisiana area properties</p>
+        <p class="homepage-descript"><a href="http://lgvboard.paragonrels.com/idx/idx.aspx?RMLS_SESSION_GUID=%7ba3f40b23-c4a7-4e42-aa6c-ef70da9683a7%7d&MLS=LGVBOARD&SUBSCRIBER=d40fd8c7-8baa-44f8-9680-8d72ca4dbc14&" target="_blank">Click here</a> to search East Texas area properties</p>
+        <p class="homepage-descript">Established in 1981</p>
+        <p class="homepage-descript" style="margin-bottom:0;">Located in Shreveport, Louisiana</p>
+
+
+        <img src="/static/images/red border.gif" style="height:5px; margin:0 60px;">
+
+        <p class="homepage-descript">Click on the buttons below to view listings</p>
+
+        <ul class="filter-buttons">
+          <li><a href="/showcase"><img src="/static/images/showcase-button.gif"></a></li>
+          <li><a href="/residential"><img src="/static/images/residential.gif"></a></li>
+          <li><a href="/commercial"><img src="/static/images/commerce-button.gif"></a></li>
+          <li><a href="/lake"><img src="/static/images/lakep-button.gif"></a></li>
+          <li><a href="/land_and_country"><img src="/static/images/landcoun-button.gif"></a></li>
+          <li><a href="/east_texas"><img src="/static/images/etexas-button.gif"></a></li>
+          <li><a href="/town_and_patio"><img src="/static/images/tphomes-button.gif"></a></li>
+        </ul>
+
+        <img src="/static/images/red border.gif" style="height:5px; margin:0 60px;">
+
+        <h2 class="homepage-descript">Contacting Us</h2>
+        <img src="/static/images/ruthandhorse.jpg" style="width:310px; margin:0 90px;">
+
+        <p class="homepage-descript"> E-mail: ruth@ruthwoodman.com </p>
+        <p class="homepage-descript"> 318-868-LAND </p>
+        <p class="homepage-descript"> (318-868-5263) </p>
+        <p class="homepage-descript"> Outside Shreveport area </p>
+        <p class="homepage-descript"> 1-800-550-LAND </p>
+
+        <img src="/static/images/red border.gif" style="height:5px; margin:0 60px;">
+
+        <p class="homepage-descript"> Ruth Woodman Real Estate, located in Shreveport, Louisiana, specializes in residential homes (town and country), land, horse farms, acreage, and cattle ranches, as well as lake properties and commercial properties.</p>
+
+        <img src="/static/images/red border.gif" style="height:5px; margin:0 60px;">
+
+        <p class="homepage-descript link"><a href="http://search.wdmn.nwla.mlxchange.com/"> North West Louisiana Area Property Search</a></p>
+        <p class="homepage-descript link"><a href="http://lgvboard.paragonrels.com/idx/idx.aspx?RMLS_SESSION_GUID=%7ba3f40b23-c4a7-4e42-aa6c-ef70da9683a7%7d&MLS=LGVBOARD&SUBSCRIBER=d40fd8c7-8baa-44f8-9680-8d72ca4dbc14&">East Texas Area Property Search</a></p>
+
+        <p class="homepage-descript link"><a href="http://www.caddoschools.org/">Caddo Parish Official School Board Site</a></p>
+        <p class="homepage-descript link"><a href="http://www.bossierschools.org/">Bossier Parish School Board Site</a></p>
+        <p class="homepage-descript link"><a href="http://www.shreveportchamber.org/">The Shreveport Chamber of Commerce Home Page</a></p>
+        <p class="homepage-descript link"><a href="http://www.shreveport.com/">Shreveport/Bossier Online</a></p>
+        <p class="homepage-descript link"><a href="https://www.realestatebook.com/">Real Estate Book</a></p>
+
+
+        <p class="homepage-descript link"><a href="/toc">Terms And Conditions</a></p>
+
+    </div>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.wh-updates {
+  display: none;
+}
+
+.wh-logo {
+  background-image:url('/static/images/ruth woodman favicon.png');
+  background-size: contain;
+  height: 60px;
+  background-color: transparent;
+  width: auto;
+}

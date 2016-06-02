@@ -1,0 +1,8 @@
+{% extends "templates/partials/base.html" %}
+
+  {% block content %}
+  <h1 class="homepage-descript">Residential</h1>
+    {% set parameters = {property_type: "Residential"} %}
+    {%include 'templates/partials/list-property.html' with parameters %}
+
+  {% endblock %}

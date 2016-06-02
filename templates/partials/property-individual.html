@@ -1,0 +1,60 @@
+{# expects property to be passed in #}
+
+{% set banner_images = 	{
+		New: "/static/images/new.jpg",
+		Pending: "/static/images/pending.jpg",
+		Reduced: "/static/images/reduced.jpg",
+		Sold: "/static/images/sold.jpg"
+} %}
+
+<div class="residental-property">
+  <div class="property-info">
+    <ul style="list-style:none;">
+      <li><span style="font-weight:bold;">{{property.name}}</span></li>
+      {% if property.banner !== "No Banner" %}
+        <li><img src={{ banner_images[property.banner] }}></li>
+      {% endif %}
+      <li><span style="font-weight:bold;">Address: </span>{{property.address}}</li>
+      <li><span style="font-weight:bold;">City: </span>{{property.city}}</li>
+      <li><span style="font-weight:bold;">State: </span>{{property.state}}</li>
+      <li><span style="font-weight:bold;">Zip Code: </span>{{property.zip_code}}</li>
+      <li><span style="font-weight:bold;">Listing Type: </span>{{property.listing_type_custom|join(', ') }}</li>
+      <li><span style="font-weight:bold;">{{property.acreage}}</span></li>
+      <li><span style="font-weight:bold;">{{property.sf}}</span></li>
+      {% if property.bedrooms !== "" %}
+        <li><span style="font-weight:bold;">{{property.bedrooms}}</span><span> bedrooms.</span></li>
+      {% endif %}
+      {% if property.bathrooms !== "" %}
+        <li><span style="font-weight:bold;">{{property.bathrooms}}</span><span> bathrooms.</span></li>
+      {% endif %}
+      <li><span style="font-weight:bold;">Price: </span>{{property.price}}</li>
+      <li><p style="font-weight:bold;">Description:</p>{{property.description|safe }}</li>
+      {% if property.embedly !== "" %}
+      <li><span style="font-weight:bold;">Take a 3D tour of the property</span></li>
+      <li>{{ property.embedly.html|safe }}<a href="{{ property.embedly.url }}"><img style="max-width:200px; hieght:auto;" src="{{ property.embedly.thumbnail_url }}"></a></li>
+      {% endif %}
+      <li><span style="font-weight:bold;">Contact: </span>{{property.contact_information}}</li>
+    </ul>
+  </div>
+	<div class="slider-wrap">
+	  <div class="slider">
+	    {% for image in property.gallery %}
+	        <img src="{{ image|imageSize(500, 500) }}" />
+	    {% endfor %}
+	  </div>
+	</div>
+<div class="home-image">
+    <ul style="list-style:none;">
+      <li class="rental-image"><img class="img-shadow" src="{{ property.image|imageSize(500, 500) }}" /</li>
+    </ul>
+      <!--<ul style="list-style:none;">
+    {% for image in property.gallery %}
+      <li>
+        <img src="{{ image|imageSize(500, 500) }}" />
+        <div style="margin: 5px auto; text-align:center; padding:5px 0;"><span class="homepage-descript">{{ image.caption }}</span></div>
+      </li>
+    {% endfor %}
+    </ul>-->
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+{% set filtered_properties = [] %}
+{% set final_filtered_properties = [] %}
+
+{% for fp in cms.properties %}
+  {% set listing_types = [] %}
+  {% for obj in fp.listing_type %}
+    {% if obj.value %}
+      {% set listing_types = merge(listing_types, [obj.label]) %}
+    {% endif %}
+    {% if obj.label === property_type && obj.value %}
+      {% set filtered_properties = merge(filtered_properties, [fp]) %}
+    {% endif %}
+  {% endfor %}
+  {% set fp.listing_type_custom = listing_types %}
+{% endfor %}
+
+{% for ban_type in ['New', 'Reduced', 'No Banner', 'Pending', 'Sold'] %}
+  {% set final_filtered_properties = merge(final_filtered_properties, filtered_properties|where('banner', ban_type)) %}
+{% endfor %}
+
+
+{% set final_filtered_properties = paginate(final_filtered_properties, 100) %}
+
+{% for fp in final_filtered_properties %}
+  {% include "templates/partials/showcase-individual.html" with {property: fp} %}
+{% endfor %}

@@ -1,0 +1,8 @@
+{% extends "templates/partials/base.html" %}
+
+  {% block content %}
+  <h1 class="homepage-descript">East Texas Properties</h1>
+    {% set parameters = {property_type: "Texas"} %}
+    {%include 'templates/partials/list-state.html' with parameters %}
+
+  {% endblock %}

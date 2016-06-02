@@ -1,0 +1,68 @@
+body {
+  box-sizing: border-box;
+  padding: 40px;
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 0 auto;
+  background: url("/static/images/ruthwoodman-background.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.header-logo{
+  display: flex;
+  justify-content: center;
+}
+.homepage-content{
+  margin: 0 auto;
+  width: 500px;
+}
+.slider-wrap {
+  float: right;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.slider{
+  background-color: #034835;
+  box-shadow: 8px 8px 4px rgba(113, 105, 105, 0.59);
+}
+.homepage-descript{
+  text-align:center;
+  font-weight: bold;
+  font-style: italic;
+}
+.homepage-descript.link{
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.filter-buttons{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.filter-buttons li{
+  padding: 5px;
+}
+.property-info{
+  width: 45%;
+  float: left;
+  clear: both;
+}
+.img-shadow{
+  box-shadow: 8px 8px 4px rgba(113, 105, 105, 0.59);
+}
+.home-image{
+  width: 50%;
+  float: right;
+}
+.residental-property{
+  border-bottom: 1px solid brown;
+  margin-bottom: 4px;
+  clear: both;
+}

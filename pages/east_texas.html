@@ -1,0 +1,8 @@
+{% extends "templates/partials/base.html" %}
+
+{% block content %}
+<h1 class="homepage-descript">East Texas Farms and Acreage</h1>
+  {% set parameters = {property_type: "East Texas"} %}
+  {%include 'templates/partials/list-property.html' with parameters %}
+
+{% endblock %}

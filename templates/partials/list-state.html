@@ -1,0 +1,6 @@
+{% set residential_rentalproperties = cms.properties|where('state',type) %}
+{% set residential_rentalproperties = paginate(residential_rentalproperties, 100) %}
+
+{% for rental_property in residential_rentalproperties %}
+  {% include "templates/partials/property-individual.html" with {property: rental_property}%}
+{% endfor%}
